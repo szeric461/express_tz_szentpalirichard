@@ -24,6 +24,23 @@ app.get("/szobak", (req, res) => {
     });
 });
 
+app.get("/szobak/SZnev", (req, res) => {
+    const sql = "SELECT * FROM szobak WHERE sznev LIKE 'Sz%'";
+    db.query(sql, (err, result) => {
+        res.json(result);
+    });
+});
+
+
+app.get("/szobak/agy2", (req, res) => {
+    const sql = "SELECT * FROM szobak WHERE agy > 2";
+    db.query(sql, (err, result) => {
+            res.json(result);
+        });
+    });
+    
+
+
 app.listen(3001, () => {
     console.log("Szerver a 3001-es porton fut.");
 });
