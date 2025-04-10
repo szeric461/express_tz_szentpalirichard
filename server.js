@@ -25,5 +25,5 @@ app.get("/szobak", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("3000-es porton fut.");
+    console.log("Szerver a 3000-es porton fut.");
 });
